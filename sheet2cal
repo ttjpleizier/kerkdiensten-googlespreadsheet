@@ -26,9 +26,9 @@ function Sheet2Cal() {
     var row = data[i];
     rij++; 
     Logger.log(rij+" "+i);
-    var sheetdate = sheet.getRange(rij,1).getValue();//oplossing gevonden op:http://stackoverflow.com/questions/15744425/google-calendar-spreadsheet-reciprocity-script-with-gscript/15746141#15746141
+    var sheetdate = sheet.getRange(rij,1).getValue();
     var calendardate = new Date(sheetdate);
-    var sheettime = sheet.getRange(rij,2).getValue();//NB: moet de format in spreadsheet Plaintext zijn? Het lijkt er wel op.
+    var sheettime = sheet.getRange(rij,2).getValue();
     var n=String(sheettime).split(":");
     calendardate.setHours(calendardate.getHours()+n[0]);
     calendardate.setMinutes(calendardate.getMinutes()+n[1]);
